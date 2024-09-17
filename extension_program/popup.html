@@ -1,5 +1,3 @@
-<!--확장 프로그램 클릭 시 나타는 팝업 구조임 인터페이스 ㅇㅇpopup.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +6,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
+  <div id="phishing-detector-app">
     <h1>Phishing Detector</h1>
-    <p>Status: <span id="status">Loading...</span></p>
-    <div id="settings">
-      <h2>Settings</h2>
-      <label>
+    <p>Status: <span id="status" class="status-indicator disabled">Disabled</span></p>
+    <div id="phishing-detector-settings">
+      <label class="toggle-label">
         Enable Phishing Detection:
-        <input type="checkbox" id="enableDetection" />
+        <input type="checkbox" id="enable-detection-toggle" />
+        <span class="slider"></span>
       </label>
     </div>
   </div>

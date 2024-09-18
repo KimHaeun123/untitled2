@@ -1,4 +1,3 @@
-// Phishing detection 활성화 여부를 저장하는 변수
 let phishingDetectionEnabled = false;
 
 // 비활성화/활성화 상태에 따른 동작을 설정하는 함수
@@ -52,7 +51,7 @@ function sendMessageAsync(message) {
     });
 }
 
-// 툴팁을 표시하는 함수
+// 링크 요소에 툴팁을 표시하는 함수
 function showTooltip(linkElement, risk, probability, url) {
     const tooltip = createTooltipElement();
 
@@ -74,13 +73,13 @@ function showTooltip(linkElement, risk, probability, url) {
     }
 
     tooltip.innerHTML = `
-        <div class="tooltip-header">
-            <span class="tooltip-risk ${riskClass}">${riskText}</span>
-            <a href="#" class="tooltip-detail-link" data-url="${url}">자세히 보기</a>
-        </div>
-        <div class="tooltip-body">
-            피싱 사이트일 확률: <span class="tooltip-probability">${(probability * 100).toFixed(2)}%</span>
-        </div>
+    <div class="tooltip-header">
+        <span class="tooltip-risk ${riskClass}">${riskText}</span>
+        <a href="#" class="tooltip-detail-link" data-url="${url}">자세히 보기</a>
+    </div>
+    <div class="tooltip-body">
+        피싱 사이트일 확률: <span class="tooltip-probability">${(probability * 100).toFixed(2)}%</span>
+    </div>
     `;
 
     positionTooltip(tooltip, linkElement);
@@ -134,13 +133,8 @@ function onMouseMoveTooltipCheck(event) {
     const linkElement = document.querySelector('a:hover');  // 현재 hover 중인 링크 가져오기
 
     if (tooltip && tooltip._boundingRect && linkElement && linkElement._boundingRect) {
-        // 히트박스에 "자세히 보기" 링크 포함
-        const detailLink = tooltip.querySelector('.tooltip-detail-link');
-        const detailLinkRect = detailLink.getBoundingClientRect();
-
         if (!isMouseWithinBounds(mouseX, mouseY, tooltip._boundingRect) &&
-            !isMouseWithinBounds(mouseX, mouseY, linkElement._boundingRect) &&
-            !isMouseWithinBounds(mouseX, mouseY, detailLinkRect)) {
+            !isMouseWithinBounds(mouseX, mouseY, linkElement._boundingRect)) {
             hideTooltip();
         }
     }
@@ -153,11 +147,10 @@ function isMouseWithinBounds(mouseX, mouseY, rect) {
 
 // "자세히 보기" 클릭 시 페이지 이동과 데이터 전송 처리
 function openDetailedPage(url) {
-  console.log('전송할 URL:', url); // 콘솔에 전송할 URL 출력
-
-  // 페이지 이동
-  window.open(`http://localhost:3000?original_url=${encodeURIComponent(url)}`, '_blank');
+    console.log('전송할 URL:', url); // 콘솔에 전송할 URL 출력
+    window.open(`http://localhost:3000?original_url=${encodeURIComponent(url)}`, '_blank');
 }
+
 
 // api 필요한 경우 !
 // function openDetailedPage(url) {

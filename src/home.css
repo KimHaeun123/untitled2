@@ -3,10 +3,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 80vh; /* 변경: 화면 높이의 최소값으로 설정 */
+    min-height: 80vh;
     background-color: #000000;
     color: #ffffff;
-    font-family: 'Krona One', sans-serif;
+    font-family: 'Krona One', 'Freesentation-9Black', sans-serif;
     padding: 50px;
 }
 
@@ -22,15 +22,15 @@
 
 .search-container {
     position: relative;
-    width: 100%; /* 부모 요소에 대한 너비 설정 */
-    max-width: 600px; /* 최대 너비 제한 */
-    display: flex; /* flexbox를 사용하여 중앙 정렬 */
-    justify-content: center; /* 중앙에 배치 */
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
     margin-bottom: 320px;
 }
 
 .search-input {
-    width: 100%; /* 100%로 설정하여 max-width에 맞추도록 */
+    width: 100%;
     padding: 10px 15px 10px 70px;
     font-size: 16px;
     border: 2px solid #7D9EF1;
@@ -49,12 +49,13 @@
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    fill: #7D9EF1;
+    fill: #7D9EF1; /* 정상 사이트 색상 */
 }
 
-
-
-
+/* 피싱 사이트일 때 색상 */
+.phishing .url-search-icon {
+    fill: #652121; /* 피싱 사이트 색상 */
+}
 
 .url-title {
     margin-top: 30px;
@@ -63,75 +64,212 @@
 
 .url-title h1 {
     font-size: 48px;
-    color: #00ff00;
+    background: linear-gradient(90deg, #ffffff, #999999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .reliable-site {
-    font-size: 16px;
+    font-size: 32px;
+    font-style: normal;
     color: #0066cc;
     margin-top: 5px;
 }
-
-
-
 
 .content-box {
     width: 53%;
     background-color: rgba(29, 29, 29, 0.33);
     border: 1px solid #494949;
     border-radius: 15px;
-    padding: 50px 100px 50px 100px;
-    margin-top: 50px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    padding: 40px 80px;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .about-heading {
-    font-size: 32px;
+    font-size: 40px;
     margin-bottom: 20px;
 }
 
-/* 좌우로 나눌 컨텐츠 */
-.content {
+.upper-section {
+    font-family: 'Freesentation-9Black', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-/* 좌측 섹션 */
-.left-section {
-    width: 40%;
+.left-section, .right-section {
+    width: 60%;
 }
 
 .section-title {
-    font-size: 20px;
+    margin-bottom: 10px;
+    color: #245AAB;
+}
+
+.left-section {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.url-risk {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
 }
 
-/* 상태 박스 */
+.url-risk-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #245AAB;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.status-url-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 .status-box {
-    width: 100px;
-    height: 50px;
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    background-color: #002244;
-    color: #00ff00;
-    margin-bottom: 10px;
-}
-
-/* 우측 섹션 */
-.right-section {
-    width: 55%;
-}
-
-.right-section h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.right-section p {
-    line-height: 1.6;
+    border-radius: 20px;
+    background-color: rgba(36, 90, 171, 0.13); /* 투명도 13% */
+    border: 2px solid #245AAB;
+    color: #245AAB;
     font-size: 16px;
+}
+
+.url-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.url-text {
+    font-size: 16px;
+    color: #245AAB;
+}
+
+.url-display p {
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.url-search-icon {
+    margin-left: 5px;
+}
+
+.phishing-probability-box {
+    font-size: 14px;
+    color: #ffffff;
+    border: 1px solid;
+    margin-top: 10px;
+    padding: 2px 5px;
+    border-radius: 20px;
+}
+
+.ip-risk {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ip-risk-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #245AAB;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 위와 아래 간격 조정 */
+    width: 50%;  /* 전체 너비 사용 */
+}
+
+.ip-region-wrapper {
+    display: flex;
+    justify-content: space-between; /* 왼쪽과 오른쪽 간격 설정 */
+    margin-top: 5px;
+    width: 100%; /* 전체 너비 사용 */
+}
+
+.left-ip {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #ffffff;
+}
+
+.ip-text {
+    color: #245AAB;
+}
+
+.right-info {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+.right-info p, .left-ip p {
+    margin-top: 1px;
+    margin-bottom: 2px;
+}
+
+.lower-section {
+    font-family: 'Freesentation-9Black', sans-serif;
+    margin-top: 60px;
+}
+
+.feature-list {
+    justify-content: space-around;
+    font-size: 14px;
     color: #aaa;
+}
+
+/* 피싱 사이트일 때의 스타일 */
+.phishing .reliable-site,
+.phishing .section-title,
+.phishing .url-risk-dot,
+.phishing .status-box,
+.phishing .url-text,
+.phishing .ip-text {
+    color: #652121;
+}
+
+.phishing .url-risk-dot,
+.phishing .ip-risk-dot {
+    background-color: #652121;
+}
+
+.phishing .status-box {
+    background-color: rgba(101, 33, 33, 0.13); /* 투명도 13% */
+    border: 2px solid #652121;
+}
+
+
+
+.phishing-probability-box.normal {
+    border: 1px solid;
+    border-image: linear-gradient(to bottom right, #7D9EF1, #485B8B) 1;
+}
+
+.phishing-probability-box.phishing {
+    border: 1px solid;
+    border-image: linear-gradient(to bottom right, #F17D7D, #CE2D2D) 1;
 }

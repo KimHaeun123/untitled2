@@ -1,6 +1,6 @@
-.App {
-  text-align: center;
-}
+/*.App {*/
+/*  text-align: center;*/
+/*}*/
 
 .App-logo {
   height: 40vmin;
@@ -37,3 +37,10 @@
   }
 }
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+@font-face {
+  font-family: 'Freesentation-9Black';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}

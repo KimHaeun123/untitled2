@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-route
 import Home from './home'; // Home 컴포넌트 가져오기
 import About from './about';
 import Navbar from './navbar'; // Navbar 컴포넌트 가져오기
+import './App.css';
 
 function App() {
     return (

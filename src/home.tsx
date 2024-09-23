@@ -8,18 +8,22 @@ const Home: React.FC = () => {
     const [result, setResult] = useState<any>(null);
     const [loading, setLoading] = useState<boolean>(false);
 
-    // URL 파라미터에서 original_url 가져오기
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
         const originalUrl = params.get('original_url');
         if (originalUrl) {
             setUrl(originalUrl);
-            handleSearch(originalUrl); // URL에 대한 결과 자동으로 가져오기
+            handleSearch(originalUrl);
         }
     }, []);
 
+    useEffect(() => {
+        if (loading) {
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+    }, [loading]);
+
     const handleSearch = async (inputUrl: string) => {
-        // URL 유효성 검사
         if (!inputUrl.startsWith('http://') && !inputUrl.startsWith('https://')) {
             alert('Please enter a valid URL starting with http:// or https://');
             return;
@@ -83,18 +87,20 @@ const Home: React.FC = () => {
                 />
             </div>
 
-            <div className="url-title">
-                {result ? (
-                    <>
-                        <h1>{result.url}</h1>
-                        <p className="reliable-site">{getReliabilityText(result.prediction_result)}</p>
-                    </>
-                ) : null}
-            </div>
+            {loading && (
+                <div className="loading-container">
+                    <p>Loading...</p>
+                </div>
+            )}
 
-            {loading && <p>Loading...</p>}
+            {!loading && result && (
+                <div className="url-title">
+                    <h1>{result.url}</h1>
+                    <p className="reliable-site">{getReliabilityText(result.prediction_result)}</p>
+                </div>
+            )}
 
-            {result && (
+            {!loading && result && (
                 <div className="content-box">
                     <h2 className="about-heading">About</h2>
                     <div className="upper-section">
@@ -109,9 +115,7 @@ const Home: React.FC = () => {
                                 </div>
                                 <div className="url-display">
                                     <p className="url-text">URL</p>
-                                    <p>
-                                        {result.url}
-                                    </p>
+                                    <p>{result.url}</p>
                                     <div className={`phishing-probability-box ${result.prediction_result === 1 ? 'phishing' : 'normal'}`}>
                                         Phishing Probability: <span style={{ color: result.prediction_result === 1 ? '#652121' : '#0066FF' }}>{result.prediction_prob}</span>
                                     </div>
@@ -139,7 +143,6 @@ const Home: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Reason & Summary 섹션을 조건부로 렌더링 */}
                     {result.prediction_result !== -1 && (
                         <div className="lower-section">
                             <h3>Reason & Summary</h3>

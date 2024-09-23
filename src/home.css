@@ -52,6 +52,30 @@
     fill: #7D9EF1; /* 정상 사이트 색상 */
 }
 
+
+@keyframes loadingAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* 화면 높이에 맞게 조정 */
+    color: #ffffff;
+    font-size: 24px; /* 폰트 크기 조정 */
+    animation: loadingAnimation 1s infinite; /* 애니메이션 적용 */
+}
+
+
 /* 피싱 사이트일 때 색상 */
 .phishing .url-search-icon {
     fill: #652121; /* 피싱 사이트 색상 */

@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
                 </button>
             </div>
             <div className="navbar-right">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="navbar-icon">
+                <a href="https://github.com/hs-phishing/web-phishing-detection" target="_blank" rel="noopener noreferrer" className="navbar-icon">
                     <GithubIcon width="20" height="20" fill="currentColor" />
                 </a>
                 <a href="https://example.com/dm" className="navbar-icon">

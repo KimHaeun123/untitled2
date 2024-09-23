@@ -58,8 +58,12 @@
 }
 
 .url-title {
-    margin-top: 30px;
+    margin-top: 35px;
     text-align: center;
+    max-width: 60%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .url-title h1 {
@@ -67,6 +71,14 @@
     background: linear-gradient(90deg, #ffffff, #999999);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.url-title h1 {
+    font-size: clamp(16px, 5vw, 48px); /* 최소 16px, 최대 48px로 조정 */
 }
 
 .reliable-site {
@@ -77,7 +89,7 @@
 }
 
 .content-box {
-    width: 53%;
+    width: 55%;
     background-color: rgba(29, 29, 29, 0.33);
     border: 1px solid #494949;
     border-radius: 15px;
@@ -96,11 +108,13 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 20px;
 }
 
-.left-section, .right-section {
-    width: 60%;
-}
+/*.left-section, .right-section {*/
+/*    width: 60%;*/
+/*}*/
 
 .section-title {
     margin-bottom: 10px;
@@ -108,11 +122,13 @@
 }
 
 .left-section {
-    width: 45%;
+    flex: 5;
+    /*width: 30%;*/
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-shrink: 0;
 }
 
 .url-risk {
@@ -134,7 +150,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    /*width: 100%;*/
+    flex-shrink: 1; /* 부모 크기를 넘지 않도록 축소 가능 설정 */
 }
 
 .status-box {
@@ -154,6 +171,7 @@
 .url-display {
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
 }
 
 .url-text {
@@ -179,6 +197,7 @@
     margin-top: 10px;
     padding: 2px 5px;
     border-radius: 20px;
+    display: inline-block;
 }
 
 .ip-risk {
@@ -196,10 +215,12 @@
 }
 
 .right-section {
+    flex:5;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* 위와 아래 간격 조정 */
-    width: 50%;  /* 전체 너비 사용 */
+    /*width: 45%;  !* 전체 너비 사용 *!*/
+
 }
 
 .ip-region-wrapper {
@@ -226,9 +247,10 @@
     color: #ffffff;
 }
 
-.right-info p, .left-ip p {
+.right-info p{
     margin-top: 1px;
     margin-bottom: 2px;
+    margin-left:20px;
 }
 
 .lower-section {

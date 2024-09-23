@@ -105,10 +105,10 @@ const Home: React.FC = () => {
                                     <p className="url-text">URL</p>
                                     <p>
                                         {result.url}
-                                        <SearchIcon
-                                            className="url-search-icon"
-                                            style={{ fill: result.prediction_result === 1 ? '#652121' : '#245AAB' }}
-                                        />
+                                        {/*<SearchIcon*/}
+                                        {/*    className="url-search-icon"*/}
+                                        {/*    style={{ fill: result.prediction_result === 1 ? '#652121' : '#245AAB' }}*/}
+                                        {/*/>*/}
                                     </p>
                                     <div className={`phishing-probability-box ${result.prediction_result === 1 ? 'phishing' : 'normal'}`}>
                                         Phishing Probability: <span style={{ color: result.prediction_result === 1 ? '#652121' : '#0066FF' }}>{result.prediction_prob}</span>

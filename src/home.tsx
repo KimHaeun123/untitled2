@@ -124,13 +124,13 @@ const Home: React.FC = () => {
                             </div>
                             <div className="ip-region-wrapper">
                                 <div>
-                                    <span className="ip-text" style={{ marginRight: '15px' }}>IP</span>
-                                    <span style={{ color: '#ffffff' }}>{result.ip_address}</span>
+                                    <span className="ip-text" style={{marginRight: '15px'}}>IP</span>
+                                    <span style={{color: '#ffffff'}}>{result.ip_address || '-'}</span>
                                 </div>
                                 <div className="right-info">
-                                    <p>Country: {result.country}</p>
-                                    <p>Region: {result.region}</p>
-                                    <p>ISP Name: {result.isp_name}</p>
+                                    <p>Country: {result.country || '-'}</p>
+                                    <p>Region: {result.region || '-'}</p>
+                                    <p>ISP Name: {result.isp_name || '-'}</p>
                                     <p>VPN Usage: {result.is_vpn ? 'Yes' : 'No'}</p>
                                 </div>
                             </div>

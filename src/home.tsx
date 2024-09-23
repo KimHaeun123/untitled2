@@ -19,6 +19,12 @@ const Home: React.FC = () => {
     }, []);
 
     const handleSearch = async (inputUrl: string) => {
+        // URL 유효성 검사
+        if (!inputUrl.startsWith('http://') && !inputUrl.startsWith('https://')) {
+            alert('Please enter a valid URL starting with http:// or https://');
+            return;
+        }
+
         if (inputUrl.trim() === '') return;
 
         setLoading(true);
@@ -105,10 +111,6 @@ const Home: React.FC = () => {
                                     <p className="url-text">URL</p>
                                     <p>
                                         {result.url}
-                                        {/*<SearchIcon*/}
-                                        {/*    className="url-search-icon"*/}
-                                        {/*    style={{ fill: result.prediction_result === 1 ? '#652121' : '#245AAB' }}*/}
-                                        {/*/>*/}
                                     </p>
                                     <div className={`phishing-probability-box ${result.prediction_result === 1 ? 'phishing' : 'normal'}`}>
                                         Phishing Probability: <span style={{ color: result.prediction_result === 1 ? '#652121' : '#0066FF' }}>{result.prediction_prob}</span>
@@ -124,8 +126,8 @@ const Home: React.FC = () => {
                             </div>
                             <div className="ip-region-wrapper">
                                 <div>
-                                    <span className="ip-text" style={{marginRight: '15px'}}>IP</span>
-                                    <span style={{color: '#ffffff'}}>{result.ip_address || '-'}</span>
+                                    <span className="ip-text" style={{ marginRight: '15px' }}>IP</span>
+                                    <span style={{ color: '#ffffff' }}>{result.ip_address || '-'}</span>
                                 </div>
                                 <div className="right-info">
                                     <p>Country: {result.country || '-'}</p>

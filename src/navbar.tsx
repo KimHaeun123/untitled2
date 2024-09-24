@@ -39,12 +39,17 @@ const Navbar: React.FC = () => {
                 </button>
             </div>
             <div className="navbar-right">
-                <a href="https://github.com/hs-phishing/web-phishing-detection" target="_blank" rel="noopener noreferrer" className="navbar-icon">
-                    <GithubIcon width="20" height="20" fill="currentColor" />
+                <a href="https://github.com/hs-phishing/web-phishing-detection" target="_blank"
+                   rel="noopener noreferrer" className="navbar-icon">
+                    <GithubIcon width="20" height="20" fill="currentColor"/>
                 </a>
-                <a href="https://example.com/dm" className="navbar-icon">
-                    <DmIcon width="20" height="20" fill="currentColor" />
+                <a href="#" className="navbar-icon" onClick={(e) => {
+                    e.preventDefault();
+                    alert("If you have any suggestions, please send an email to 2091127@hansung.ac.kr");
+                }}>
+                    <DmIcon width="20" height="20" fill="currentColor"/>
                 </a>
+
             </div>
         </nav>
     );

@@ -24,7 +24,7 @@ const About: React.FC = () => {
             <div className="about-split-container">
                 <div className="about-right-section">
                     <p className="about-main-text">Step1: Enter the suspicious URL</p>
-                    <h1 className="title">Catch Phishing</h1>
+                    <h1 className="about-title" style={{textAlign: 'center'}}>Catch Phishing</h1>
                     <div className="search-container">
                         <SearchIcon className="search-icon"/>
                         <input

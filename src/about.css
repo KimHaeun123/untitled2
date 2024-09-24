@@ -1,24 +1,82 @@
-.home {
+/* about.css */
+.about-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
     background-color: #000000;
     color: #ffffff;
-    font-family: 'Krona One', 'Freesentation-9Black', sans-serif;
-    padding: 50px;
+    min-height: 100vh;
+    font-family: 'Krona One', sans-serif;
 }
 
+.about-split-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 80%;
+}
+
+.about-left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 50px;
+    font-size: 32px;
+    color: #ffffff;
+    writing-mode: vertical-lr;
+}
+
+.about-right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-main-text {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-sub-text {
+    font-size: 16px;
+    color: #aaa;
+}
+
+.about-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #151313;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.about-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+
 .title {
-    margin-top: 180px;
+    margin-top: 60px;
     font-size: 48px;
     font-weight: normal;
     background: linear-gradient(90deg, #245AAB, #253E62);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 30px;
+    align-items: center;
 }
+
+
+
 
 .search-container {
     position: relative;
@@ -52,68 +110,8 @@
     fill: #7D9EF1; /* 정상 사이트 색상 */
 }
 
-
-@keyframes loadingAnimation {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.loading-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh; /* 화면 높이에 맞게 조정 */
-    color: #ffffff;
-    font-size: 24px; /* 폰트 크기 조정 */
-    animation: loadingAnimation 1s infinite; /* 애니메이션 적용 */
-}
-
-
-/* 피싱 사이트일 때 색상 */
-.phishing .url-search-icon {
-    fill: #652121; /* 피싱 사이트 색상 */
-}
-
-.url-title {
-    margin-top: 35px;
-    text-align: center;
-    max-width: 60%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.url-title h1 {
-    font-size: 48px;
-    background: linear-gradient(90deg, #ffffff, #999999);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.url-title h1 {
-    font-size: clamp(16px, 5vw, 48px); /* 최소 16px, 최대 48px로 조정 */
-}
-
-.reliable-site {
-    font-size: 32px;
-    font-style: normal;
-    color: #0066cc;
-    margin-top: 5px;
-}
-
 .content-box {
-    width: 55%;
+    width: 80%;
     background-color: rgba(29, 29, 29, 0.33);
     border: 1px solid #494949;
     border-radius: 15px;
@@ -216,11 +214,11 @@
 
 .phishing-probability-box {
     font-size: 14px;
-    color: #ffffff;
+    color : #245AAB;
     border: 1px solid;
     margin-top: 10px;
     padding: 2px 5px;
-    border-radius: 20px;
+    border-radius: 5px;
     display: inline-block;
 }
 
@@ -276,48 +274,3 @@
     margin-bottom: 2px;
     margin-left:20px;
 }
-
-.lower-section {
-    font-family: 'Freesentation-9Black', sans-serif;
-    margin-top: 60px;
-}
-
-.feature-list {
-    justify-content: space-around;
-    font-size: 14px;
-    color: #aaa;
-}
-
-/* 피싱 사이트일 때의 스타일 */
-.phishing .reliable-site,
-.phishing .section-title,
-.phishing .url-risk-dot,
-.phishing .status-box,
-.phishing .url-text,
-.phishing .ip-text {
-    color: #652121;
-}
-
-.phishing .url-risk-dot,
-.phishing .ip-risk-dot {
-    background-color: #652121;
-}
-
-.phishing .status-box {
-    background-color: rgba(101, 33, 33, 0.13); /* 투명도 13% */
-    border: 2px solid #652121;
-}
-
-
-
-.phishing-probability-box.normal {
-    border: 1px solid;
-    border-image: linear-gradient(to bottom right, #7D9EF1, #485B8B) 1;
-}
-
-.phishing-probability-box.phishing {
-    border: 1px solid;
-    border-image: linear-gradient(to bottom right, #F17D7D, #CE2D2D) 1;
-}
-
-

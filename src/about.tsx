@@ -23,7 +23,7 @@ const About: React.FC = () => {
             {/* 두 번째 화면 - home.tsx의 검색창 재활용 */}
             <div className="about-split-container">
                 <div className="about-right-section">
-                    <p className="about-main-text">Enter the suspicious URL</p>
+                    <p className="about-main-text">Step1: Enter the suspicious URL</p>
                     <h1 className="title">Catch Phishing</h1>
                     <div className="search-container">
                         <SearchIcon className="search-icon"/>
@@ -39,8 +39,8 @@ const About: React.FC = () => {
             {/* 세 번째 화면 - home.tsx의 content-box 재활용 */}
             <div className="about-split-container">
                 <div className="about-right-section">
-                    <p className="about-main-text">Check the URL information</p>
-                    <div className="content-box">
+                    <p className="about-main-text">Step2 :Check the URL information</p>
+                    <div className="content-box" style={{width: '80%'}}>
                         <h2 className="about-heading">About</h2>
                         <div className="upper-section">
                             <div className="left-section">

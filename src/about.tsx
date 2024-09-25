@@ -23,9 +23,9 @@ const About: React.FC = () => {
             {/* 두 번째 화면 - home.tsx의 검색창 재활용 */}
             <div className="about-split-container">
                 <div className="about-right-section">
-                    <p className="about-main-text">Step1: Enter the suspicious URL</p>
+                    <p className="about-main-text">Step1: <br/>Enter the suspicious URL</p>
                     <h1 className="about-title" style={{textAlign: 'center'}}>Catch Phishing</h1>
-                    <div className="search-container">
+                    <div className="search-container" style={{marginLeft: '5%'}}>
                         <SearchIcon className="search-icon"/>
                         <input
                             type="text"
@@ -39,7 +39,7 @@ const About: React.FC = () => {
             {/* 세 번째 화면 - home.tsx의 content-box 재활용 */}
             <div className="about-split-container">
                 <div className="about-right-section">
-                    <p className="about-main-text">Step2 :Check the URL information</p>
+                    <p className="about-main-text">Step2: <br/>Check the information of URL</p>
                     <div className="content-box" style={{width: '80%'}}>
                         <h2 className="about-heading">About</h2>
                         <div className="upper-section">
@@ -48,12 +48,12 @@ const About: React.FC = () => {
                                     <div className="url-risk-dot"></div>
                                     <p className="section-title">URL RISK</p>
                                 </div>
-                                <div className="status-url-wrapper">
+                                <div className="about-status-url-wrapper">
                                     <div className={`status-box phishing`}>
                                         safe
                                     </div>
-                                    <div className="url-display">
-                                        <p className="url-text">URL</p>
+                                    <div className="about-url-display">
+                                        <p className="about-url-text">URL</p>
                                         <p>https://example.com</p>
                                         <div className={`phishing-probability-box`}>
                                             Phishing Probability: <span style={{color: '#0066FF'}}>75%</span>

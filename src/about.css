@@ -30,7 +30,7 @@
 }
 
 .about-right-section {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -39,6 +39,7 @@
 .about-main-text {
     font-size: 40px;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .about-sub-text {
@@ -72,7 +73,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 30px;
-    text-align: center
+    /*text-align: center*/
 }
 
 
@@ -143,15 +144,15 @@
     color: #245AAB;
 }
 
-.left-section {
-    flex: 5;
-    /*width: 30%;*/
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-shrink: 0;
-}
+/*.left-section {*/
+/*    flex: 5;*/
+/*    !*width: 30%;*!*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: flex-start;*/
+/*    align-items: flex-start;*/
+/*    flex-shrink: 0;*/
+/*}*/
 
 .url-risk {
     display: flex;
@@ -167,7 +168,7 @@
     margin-right: 10px;
 }
 
-.status-url-wrapper {
+.about-status-url-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -190,18 +191,18 @@
     font-size: 16px;
 }
 
-.url-display {
+.about-url-display {
     display: flex;
     flex-direction: column;
     margin-left: 20px;
 }
 
-.url-text {
+.about-url-text {
     font-size: 16px;
     color: #245AAB;
 }
 
-.url-display p {
+.about-url-display p {
     display: inline-flex;
     align-items: center;
     font-size: 16px;

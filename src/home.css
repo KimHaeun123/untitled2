@@ -136,6 +136,21 @@
     gap: 20px;
 }
 
+.left-section, .right-section {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 0; /* URL이 너무 길 때 영역을 침범하지 않도록 설정 */
+}
+
+.url-display p {
+    display: inline-flex;
+    max-width: 100%;
+    /*text-overflow: ellipsis;*/
+    word-break: break-all; /* 모든 문자에서 줄바꿈 허용 */
+    white-space: normal;   /* 텍스트를 여러 줄로 표시 */
+    overflow-wrap: break-word;
+}
+
 /*.left-section, .right-section {*/
 /*    width: 60%;*/
 /*}*/
@@ -194,7 +209,6 @@
 }
 
 .url-display {
-    display: flex;
     flex-direction: column;
     margin-left: 20px;
 }
@@ -209,6 +223,7 @@
     align-items: center;
     font-size: 16px;
     margin: 5px;
+    white-space: normal;
 }
 
 .url-search-icon {
@@ -314,11 +329,11 @@
 .phishing-probability-box.normal {
     border: 1px solid;
     border-image: linear-gradient(to bottom right, #7D9EF1, #485B8B) 1;
+    border-radius: 15px;
 }
 
 .phishing-probability-box.phishing {
     border: 1px solid;
     border-image: linear-gradient(to bottom right, #F17D7D, #CE2D2D) 1;
+    border-radius: 15px;
 }
-
-
